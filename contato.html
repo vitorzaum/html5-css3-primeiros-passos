@@ -13,7 +13,7 @@
             <!-- cabeçalho da página-->
             <div class="caixa">
                 <h1>
-                    <img src="logo.png">
+                    <img src="logo.png" alt="Logo da Barbearia Alura">
                 </h1>
                 <nav>
                     <!-- nav de navegaçao, como um menu mesmo-->
@@ -28,35 +28,102 @@
 
         <main>
             <form>
-                <label for="nomeSobrenome">Nome e sobrenome</label>
-                <input type="text" id="nomeSobrenome">
-                <!-- input é a entrada de dados, temos que colocar o tipo e o id, para quem ela vai ficar
-                    atrelada
-                    label é um complemento do input, todo input deve ser precedido de um label, onde você synca os dois
-                    para facilitar a vida do usuário
-                    exceto o input de submit (enviar) não precisa de um label anteriormente
+                    <label for="nomeSobrenome">Nome e sobrenome</label>
+                    <input type="text" id="nomeSobrenome" class="inputPadrao" required>
+                    <!-- input é a entrada de dados, temos que colocar o tipo e o id, para quem ela vai ficar
+                        atrelada
+                        label é um complemento do input, todo input deve ser precedido de um label, onde você synca os dois
+                        para facilitar a vida do usuário
+                        exceto o input de submit (enviar) não precisa de um label anteriormente
+                    -->
+                    <label for="emailContato">E-mail</label>
+                    <input type="email" id="emailContato" class="inputPadrao" required placeholder="email@email.com">
+
+                    <label for="telefoneContato">Telefone</label>
+                    <input type="tel" id="telefoneContato" class="inputPadrao" required placeholder="(XX) XXXXX-XXXX">
+
+                    <label for="mensagem">Mensagem</label>
+                    <textarea cols="70" rows="10" id="mensagem" class="inputPadrao" required></textarea>
+                    <!-- tag de conteudo, é usada realmente para mensagens, para o usuario enviar um conteudo maior-->
+
+                <fieldset>
+                    <legend>Como prefere o nosso contato?</legend>
+
+                    <label for="radioEmail"><input type="radio" name="contato" value="email" id="radioEmail">Email</label>                    
+
+                    <label for="radioWhatsApp"><input type="radio" name="contato" value="whatsapp" id="radioWhatsApp" checked>WhatsApp</label>                   
+
+                    <label for="radioTelefone"><input type="radio" name="contato" value="telefone" id="radioTelefone">Telefone</label>                
+                    <!-- tipo 'radio' é para ficar uma checkbox de seleção unica, também é necessário o id e o label
+                        anteriormente. o name serve justamente para quando selecionar um, ele remover o outro, sendo possível
+                        selecionar somente uma opção.. faz com que eles sejam do mesmo grupo
+                    -->
+                </fieldset>
+
+                <fieldset>
+                    <legend>Qual horário prefere ser atendido?</legend>
+                    <select>
+                        <option>Manhã</option>
+                        <option>Tarde</option>
+                        <option>Noite</option>
+                    </select>
+                </fieldset>
+
+                <label class="checkbox"><input type="checkbox" checked> Gostaria de receber nossas novidades por email?</label>
+                <!--
+                    é possível também criar um input dentro de um label
                 -->
-                <label for="emailContato">E-mail</label>
-                <input type="text" id="emailContato">
-
-                <label for="telefoneContato">Telefone</label>
-                <input type="text" id="telefoneContato">
-
-                <input type="submit" value="Enviar formulário">
+                
+                <input type="submit" class="enviar" value="Enviar formulário">
                 <!--
                     o value dele, caso não tenha, será sempre submit traduzido para a linguagem do navegador do usuario
                     caso você queira uma frase em específica, 
                 -->
             </form>
-        </main>
+
+            <table>
+                <tr>
+                    <td>Dia</td>
+                    <td>Horário</td>
+                </tr>
+                <tr>
+                    <td>Segunda</td>
+                    <td>8h ~ 20h</td>
+                </tr>
+                <tr>
+                    <td>Quarta</td>
+                    <td>8h ~ 22h</td>
+                </tr>
+                <tr>
+                    <td>Sexta</td>
+                    <td>8h ~ 18h</td>
+                </tr>
+            </table>
+
+
         
         <footer>
             <!-- assim como o cabeçado e o texto principal
             o rodapé também tem uma <div> específica que é a footer-->
-            <img src="logo-branco.png">
+            <img src="logo-branco.png" alt="Logo da Barbearia Alura">
             <p class="copyright">&copy; Copyright Barbearia Alura - 2021</p>
         </footer>
         
     </body>
+
+    <!-- 
+        Utilizamos a tag <form> para criar um formulario.
+            
+        Alguns tipos de inputs para celular: email, tel, number, password, date, datetime, month e search
+        Como não permitir que um campo não seja preenchido, através do atributo required
+        Como exibir uma sugestão de preenchimento para os campos, através do atributo placeholder
+        Como deixar uma opção marcada por padrão nos nossos input radio e checkbox, através do atributo checked
+        Como estruturar melhor o nosso código com fieldset e legend
+        Como adicionar uma alternativa à imagem, descrevendo-a, com o atributo alt
+
+        Utilizamos a tag <tr> para marcar uma linha de uma tabela.
+        Utilizamos a tag <td> para marcar uma coluna de uma tabela.
+    -->
+
 
 </html>
